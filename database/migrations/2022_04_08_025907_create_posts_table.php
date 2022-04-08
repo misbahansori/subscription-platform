@@ -17,7 +17,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->foreignId('website_id');
             $table->string('title');
-            $table->longText('description');
+            $table->string('slug');
+            $table->longText('body');
             $table->timestamps();
         });
     }
