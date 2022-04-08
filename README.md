@@ -33,4 +33,7 @@ php artisan key:generate
 
 # Migrate the database
 php artisan migrate --seed
+
+# Run the queue
+php artisan queue:work
 ```
