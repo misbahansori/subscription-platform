@@ -37,6 +37,8 @@ class SendPostPublishedEmailJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->subscribers)->send(new PostPublished($this->post));
+        foreach($this->subscribers as $subscriber) {
+            Mail::to($subscriber->email)->send(new PostPublished($this->post, $subscriber));
+        }
     }
 }

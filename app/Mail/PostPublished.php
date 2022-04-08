@@ -32,7 +32,7 @@ class PostPublished extends Mailable
     public function build()
     {
         return $this
-            ->subject('New post published : ' . $this->post->title)
+            ->subject('New post published')
             ->markdown('mail.post-published', ['post' => $this->post]);
     }
 }
