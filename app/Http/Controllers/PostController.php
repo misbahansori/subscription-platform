@@ -32,7 +32,7 @@ class PostController extends Controller
         ]);
 
         // Send email to subscribers
-       dispatch(new SendPostPublishedEmailJob($post, $website->subscribers));
+        dispatch(new SendPostPublishedEmailJob($post, $website->subscribers));
 
         return response()->json([
             'message' => 'Post created successfully',
