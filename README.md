@@ -18,10 +18,19 @@ To clone this project is as easy as cloning it from GitHub!
 ```bash
 # clone this project
 git clone https://github.com/misbahansori/subscription-platform.git
+
 # change directory to the project
 cd subscription-platform
+
 # Install composer
 composer install
+
 # Copy environtment file.
 cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Migrate the database
+php artisan migrate --seed
 ```
