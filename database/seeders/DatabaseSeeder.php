@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Website;
+use App\Models\Subscribers;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Website::factory()
+            ->times(100)
+            ->has(Subscribers::factory(rand(100, 150)))
+            ->create();
     }
 }
